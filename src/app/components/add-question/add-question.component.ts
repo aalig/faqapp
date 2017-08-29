@@ -19,6 +19,8 @@ export class AddQuestionComponent implements OnInit {
 
   addQuestion() {
     this.questionAdded.emit({question: this.question, answer: this.answer, hide: true});
+    this.question = '';
+    this.answer = '';
   }
 
 }

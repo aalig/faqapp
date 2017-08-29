@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Question } from './../../models/question';
+import { DataService } from './../../services/data.service';
 
 @Component({
   selector: 'app-question',
@@ -8,9 +9,13 @@ import { Question } from './../../models/question';
 })
 export class QuestionComponent implements OnInit {
   @Input('question') question: Question;
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+  }
+
+  removeQuestion(question: Question) {
+    this.dataService.removeQuestion(question);
   }
 
 }
